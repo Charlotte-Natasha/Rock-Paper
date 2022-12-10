@@ -21,8 +21,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>0</td>
-                        <td>1</td>
+                        <td id="player_score">0</td>
+                        <td id="computer_score">1</td>
                     </tr>
                 </tbody>
             </table>
@@ -30,12 +30,13 @@
                 <p>Your Result</p>
             </article>
 
-            <h2>Choose your move</h2>
+            <h2 class="still_playing">Choose your move</h2>
+            <h3 id="current_play" class="current_play"></h3>
 
             <div class="buttons">
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissors</button>
+                <button class="btn" id="rock">Rock</button>
+                <button class="btn" id="paper">Paper</button>
+                <button class="btn" id="scissors">Scissors</button>
             </div>
             
         </section>
