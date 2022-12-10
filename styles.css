@@ -42,6 +42,6 @@ button{
     font-size: 16px;
     border-radius: 20px;
 }
-.current_play {
+.current_play, .player_score, .computer_score{
     text-align: center;
 }
