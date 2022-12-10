@@ -18,7 +18,7 @@ table {
     margin-right:15%;
 }
 td, th {
-    border: 1px solid #7DF9FF;
+    border: 1px solid #30D5C8;
     padding: 1rem;
     text-align: center;
 }
@@ -41,4 +41,7 @@ button{
     text-align: center;
     font-size: 16px;
     border-radius: 20px;
+}
+.current_play {
+    text-align: center;
 }

@@ -1,32 +1,39 @@
 let computerScore = 0;
 let playerScore = 0;
 
+
+
 let buttons = document.querySelectorAll('.btn')
 buttons.forEach(function(currentBtn){
-    currentBtn.addEventListener('click', playerPlay)
+currentBtn.addEventListener('click', playerPlay)
 })
 
 function playerPlay(e){
     let playerChoice = e.target.id;
-    console.log(`Player choice is : ${playerChoice}`);
+    console.log(`Player choice is: ${playerChoice}`);    
+    if (computerScore < 5 && playerScore < 5){
 
-    result = playRound(playerChoice, computerPlay())
-    console.log(result);
-
-    document.getElementById("current_play").innerHTML = result;
-    document.getElementById("player_score").innerHTML = playerScore;
-    document.getElementById("computer_score").innerHTML = computerScore;
+        result = playRound(playerChoice, computerPlay())
+        console.log(result);    
+        document.getElementById("current_play").innerHTML = result; 
+        document.getElementById("player_score").innerHTML = playerScore; 
+        document.getElementById("computer_score").innerHTML = computerScore; 
+    }
+    else{
+        console.log("GAME OVER!!!")
+        endGame();
+    }
 }
 
 const computerPlay = () => {
-    const randomNumber = Math.floor(Math.random()*3);
+    const randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) {
         case 0:
             return "rock";
-        case 0:
-            return "rock";
-        case 0:
-            return "rock";        
+        case 1:
+            return "paper";
+        case 2:
+            return "scissors";
     }
 };
 
@@ -64,8 +71,10 @@ const playRound = (playerSelection, computerSelection) => {
         }
     }
 };
+
 const endGame = () => {
     document.getElementById("current_play").innerHTML = ""; 
+
     buttons.forEach(function(currentBtn){
         currentBtn.disabled = true;
     })
@@ -79,7 +88,9 @@ const endGame = () => {
         document.getElementById("still_playing").innerHTML =  `Game Over! \nIt's a tie!!🍻 <br> Final score: <br> Player: ${playerScore} -- Computer: ${computerScore}`
         
     }
+    
     setTimeout(function(){
         window.location.reload();
     }, 5000);
 }
+
