@@ -64,3 +64,22 @@ const playRound = (playerSelection, computerSelection) => {
         }
     }
 };
+const endGame = () => {
+    document.getElementById("current_play").innerHTML = ""; 
+    buttons.forEach(function(currentBtn){
+        currentBtn.disabled = true;
+    })
+    if (playerScore > computerScore ) {
+        document.getElementById("still_playing").innerHTML = `Game Over! \nFinal score: <br> Player: ${playerScore} -- Computer: ${computerScore}`
+        
+    } else if (computerScore > playerScore) {
+        document.getElementById("still_playing").innerHTML = `Game Over! \nFinal score: <br> Player: ${playerScore} -- Computer: ${computerScore}`
+        
+    } else {
+        document.getElementById("still_playing").innerHTML =  `Game Over! \nIt's a tie!!🍻 <br> Final score: <br> Player: ${playerScore} -- Computer: ${computerScore}`
+        
+    }
+    setTimeout(function(){
+        window.location.reload();
+    }, 5000);
+}
